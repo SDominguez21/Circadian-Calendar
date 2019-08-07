@@ -90,5 +90,9 @@ app.use('/', index);
 const userRoutes = require('./routes/userRoutes');
 app.use('/api/auth', userRoutes);
 
+app.use((req, res, next) => {
+  res.sendFile(__dirname + "/public/index.html");
+});
+
 //_________________________________________________________________________
 module.exports = app;
