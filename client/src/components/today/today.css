@@ -1,0 +1,73 @@
+/* body {
+  background: url('../../background.jpg');
+  height: 100%;
+  background-position: center;
+  background-repeat: repeat;
+  background-size: cover;
+} */
+
+.today-container {
+  height: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: row;
+  margin: 161px;
+}
+.todayBackground {
+  /* position: absolute;
+  background: url('../../background.jpg');
+  height: 100%;
+  width: 100%; */
+  position: absolute;
+  background: url(/static/media/background.37af7895.jpg);
+  background-position: left;
+  height: 132%;
+  width: 100%;
+  top: 0%;
+  z-index: -1;
+}
+
+/* img {
+  height: 20%;
+  width: 20%;
+} */
+/* .today-container > div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+} */
+
+.today-container > div img {
+  width: 100%;
+  height: 100%;
+}
+
+.cosmic-container {
+  /* flex: 1; */
+  height: 20%;
+  width: 20%;
+}
+
+.moon-container {
+  /* flex: 2; */
+  height: 20%;
+  width: 41%;
+}
+
+.weather-container {
+  /* flex: 1; */
+  height: 20%;
+  width: 15%;
+}
+
+.today-stats > p {
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande',
+    'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  color: white;
+  text-align: center;
+  height: 20%;
+  width: 20%;
+  /* padding:  */
+  font-weight: 200;
+}
