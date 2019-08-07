@@ -33,7 +33,7 @@ class App extends React.Component {
   };
 
   month = async () => {
-    let result = await axios.get('http://localhost:5000/allCallsForMonth');
+    let result = await axios.get(`${process.env.REACT_APP_BASE}/allCallsForMonth`);
     return result.data;
   };
 
@@ -41,7 +41,7 @@ class App extends React.Component {
   getCurrentlyLoggedInUser = () => {
     console.log('FETCHING USER!!!!');
     axios
-      .get('http://localhost:5000/api/auth/getcurrentuser', {
+      .get(`${process.env.REACT_APP_BASE}/api/auth/getcurrentuser`, {
         withCredentials: true
       })
       .then(response => {
@@ -82,7 +82,7 @@ class App extends React.Component {
   logout = () => {
     axios
       .post(
-        'http://localhost:5000/api/auth/logout',
+        `${process.env.REACT_APP_BASE}/api/auth/logout`,
         {},
         { withCredentials: true }
       )
