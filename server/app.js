@@ -17,9 +17,10 @@ require('./config/passport');
 
 mongoose.Promise = Promise;
 mongoose
-  .connect('mongodb://localhost/CircadianCalendar', {
-    useNewUrlParser: true
-  })
+  .connect(process.env.MONGODB_URI, { useNewUrlParser: true })
+  // ('mongodb://localhost/CircadianCalendar', {
+  //   useNewUrlParser: true
+  // })
   .then(x => {
     console.log(
       `Connected to Mongo! Database name: "${x.connections[0].name}"`
