@@ -40,7 +40,10 @@ const app = express();
 app.use(
   cors({
     credentials: true,
-    origin: ['http://localhost:3000', 'https://cosmic-calendar.herokuapp.com']
+    origin: [
+      'http://localhost:3000',
+      'https://circadian-calendar.herokuapp.com'
+    ]
   })
 );
 
@@ -91,7 +94,7 @@ const userRoutes = require('./routes/userRoutes');
 app.use('/api/auth', userRoutes);
 
 app.use((req, res, next) => {
-  res.sendFile(__dirname + "/public/index.html");
+  res.sendFile(__dirname + '/public/index.html');
 });
 
 //_________________________________________________________________________
