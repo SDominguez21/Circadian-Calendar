@@ -1,0 +1,19 @@
+if all u change is express 
+root folder 
+git add 
+git commit 
+git push heroku master 
+
+
+react change 
+2 options run
+npm run preinstall from root root 
+creates build folder client side ---take everything inside folder (only) and drag them into server/public
+and then git add commit and push heroku master 
+
+
+------------------------------------------------------------------------------------------------------------
+
+-make user interface=> form for user to use for each event entry--route for entries, backend route and save user information to mongo 
+-somewhere in all-calendar (whereever we are making all the api calls) route, collect data and add it the object and in 
+-query to mongo and it's own route for calendar componoent and send results back and sanitize them just like other sanitized objects 

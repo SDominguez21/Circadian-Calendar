@@ -30,7 +30,7 @@ class App extends React.Component {
 
   month = async () => {
     let result = await axios.get(
-      `${process.env.REACT_APP_BASE}/allCallsForMonth`
+      `https://circadian-calendar.herokuapp.com/allCallsForMonth`
     );
     return result.data;
   };
