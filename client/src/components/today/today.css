@@ -22,7 +22,7 @@
 }
 .todayBackground {
   position: absolute;
-  background: url(/static/media/background.37af7895.jpg);
+  background: url('/background.jpg');
   background-position: top;
   background-size: contain;
   height: 191%;

@@ -17,18 +17,15 @@ router.get('/allCallsForMonth', async (req, res, next) => {
   let moon = [];
   let cosmicEvent = [];
   await rp
-
     .get({
       url:
         'https://api.aerisapi.com/forecasts/miami,fl?filter=daynight&limit=60&format=json&client_id=ubVTEqqaNjJ2GI2wGFHqj&client_secret=DTmrLknIoE2Bk2HOBj6jHKJqcj0CBDK5KhyZTkoR'
     })
-
     .then(data => {
       weather.push(...JSON.parse(data).response[0].periods);
       // console.log(weather);
     });
   await rp
-
     .get({
       url:
         'https://api.aerisapi.com/sunmoon/moonphases?limit=31&miami,fl&from=08/02/2019&format=json&client_id=ubVTEqqaNjJ2GI2wGFHqj&client_secret=DTmrLknIoE2Bk2HOBj6jHKJqcj0CBDK5KhyZTkoR'
@@ -45,7 +42,7 @@ router.get('/allCallsForMonth', async (req, res, next) => {
   });
 
   console.log('88888888888', cosmicEvent);
-  res.send({
+  res.json({
     weather: weather,
     moon: moon,
     cosmic: cosmicEvent
