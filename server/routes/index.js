@@ -35,14 +35,14 @@ router.get('/allCallsForMonth', async (req, res, next) => {
     });
 
   await Event.find({
-    startDate: { $gte: '07/01/2019', $lte: '12/31/2019' }
+    startDate: { $gte: '2019-07-01', $lte: '2019-12-31' }
   }).then(results => {
     console.log('!!!!!!!!', results);
     cosmicEvent.push(...results);
   });
 
   console.log('88888888888', cosmicEvent);
-  res.json({
+  res.send({
     weather: weather,
     moon: moon,
     cosmic: cosmicEvent

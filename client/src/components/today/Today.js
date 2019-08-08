@@ -30,7 +30,6 @@ export default class Today extends Component {
   };
 
   componentDidMount() {
-    console.log(this.props);
     // this.setState({
     //   cosmicInfo: this.props.firstCosmic,
     //   moonInfo: this.props.firstMoon,

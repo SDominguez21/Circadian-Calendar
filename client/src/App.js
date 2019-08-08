@@ -10,13 +10,6 @@ import AllCalendar from './components/all-calendar/AllCalendar.js';
 import './App.css';
 // import Moment from 'react-moment';
 
-// to-do:
-// -redirect mooncal/access to logged in users only
-// make api call blank date to blank date, from - to
-// calculate moon phases (based off current api structure) : SEED MOON PHASES
-// add dateISO to existing seeds
-//add eyes that follow cursor
-
 class App extends React.Component {
   state = {
     currentlyLoggedIn: null,
@@ -33,6 +26,7 @@ class App extends React.Component {
       `${process.env.REACT_APP_BASE}/allCallsForMonth`
     );
     return result.data;
+    console.log(result.data, '222222222');
   };
 
   // Sign up/log in
@@ -43,7 +37,7 @@ class App extends React.Component {
         withCredentials: true
       })
       .then(response => {
-        console.log('yay really fetching the user now');
+        // console.log('yay really fetching the user now');
         let theUser = response.data;
         this.setState({ currentlyLoggedIn: theUser, ready: true });
       })
