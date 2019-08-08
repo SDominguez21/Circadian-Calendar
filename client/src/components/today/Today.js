@@ -39,6 +39,7 @@ export default class Today extends Component {
 
   render() {
     console.log('inside of today', this.props);
+    console.log('6666666666', this.props.firstCosmic);
     return (
       <div className="today-container">
         <div className="calbtn">
@@ -48,13 +49,11 @@ export default class Today extends Component {
         </div>
         <div className="todayBackground" />
         {/* cosmic */}
-        {/* seeds pending */}
         <div className="cosmic-container">
           {this.state.cosmicShowing ? (
             <div className="today-stats" onClick={this.handleClickCosmic}>
               <p>{this.props.firstCosmic.name}</p>
               {/* <p>{this.props.firstCosmic.}</p> */}
-              {/* <Link to="/cosmic-calendar">Cosmic Calendar</Link> */}
             </div>
           ) : (
             <img
@@ -69,7 +68,6 @@ export default class Today extends Component {
           {this.state.moonShowing ? (
             <div className="today-stats" onClick={this.handleClickMoon}>
               <p>{this.props.firstMoon.name}</p>
-              {/* <Link to="/moon-calendar">Moon Calendaer</Link> */}
             </div>
           ) : (
             <img
@@ -86,7 +84,6 @@ export default class Today extends Component {
           {this.state.weatherShowing ? (
             <div className="today-stats" onClick={this.handleClickWeather}>
               <p>{this.props.firstWeather.weather}</p>
-              {/* <Link to="/weather-calendar">Weather Calendar</Link> */}
             </div>
           ) : (
             <img

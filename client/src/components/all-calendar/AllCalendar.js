@@ -35,6 +35,7 @@ export default class AllCalendar extends Component {
   render() {
     const sanitizedWeatherEvents = this.props.weatherEvents.map(wEvent => {
       let oneWeather = {};
+      // console.log(wEvent.dateTimeISO);
       oneWeather.date = wEvent.dateTimeISO;
       oneWeather.title = wEvent.weather;
       return oneWeather;
@@ -42,6 +43,7 @@ export default class AllCalendar extends Component {
 
     const sanitizedMoonEvents = this.props.moonEvents.map(mEvent => {
       let oneMoon = {};
+      // console.log('88888', mEvent.dateTimeISO);
       oneMoon.date = mEvent.dateTimeISO;
       oneMoon.title = mEvent.name;
       return oneMoon;
@@ -49,7 +51,9 @@ export default class AllCalendar extends Component {
 
     const sanitizedCosmicEvents = this.props.cosmicEvents.map(cEvent => {
       let oneCosmic = {};
-      oneCosmic.date = cEvent.date;
+      console.log('333333333333333!!!!!!', this.props.cosmicEvents);
+      console.log(cEvent.startDate);
+      oneCosmic.date = cEvent.startDate;
       oneCosmic.name = cEvent.name;
       return oneCosmic;
     });
@@ -59,10 +63,12 @@ export default class AllCalendar extends Component {
       ...sanitizedMoonEvents,
       ...sanitizedCosmicEvents
     ];
-    // console.log('@@@@', allSanitizedEvents);
+
+    // console.log('&&&&&&', sanitizedCosmicEvents);
+    console.log('@@@@', allSanitizedEvents);
 
     const addEvent = () => {
-      console.log('@@@@@@@@@@@@@@@', this.state.eventFormShowing);
+      // console.log('@@@@@@@@@@@@@@@', this.state.eventFormShowing);
       this.setState({
         eventFormShowing: !this.state.eventFormShowing
       });
@@ -70,6 +76,7 @@ export default class AllCalendar extends Component {
 
     return (
       <div className="fullCal">
+        {/* USER ADDING EVENT */}
         <button onClick={addEvent}>Add Event</button>
         {this.state.eventFormShowing && (
           <div className="Modal">

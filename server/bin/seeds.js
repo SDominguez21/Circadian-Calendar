@@ -19,8 +19,8 @@ const event = [
     name: 'Perseid Meteors',
     type: 'Meteor Shower',
     time: null,
-    startDate: '2019-07-17',
-    endDate: '2019-08-24',
+    startDate: '2019-07-17T00:00:00+00:00"',
+    endDate: '2019-08-24T00:00:00+00:00',
     location: 'Northern Hemisphere',
     description: 'Peak: 08/12/2019-08/13/2019, Parent: Comet 109P/Swift-Tuttle',
     img: null
@@ -30,7 +30,7 @@ const event = [
     name: 'Sturgeon Moon',
     type: 'Full Moon',
     time: null,
-    startDate: '2019-08-15',
+    startDate: '2019-08-15T00:00:00+00:00',
     endDate: null,
     location: null,
     description: "August's Full Moon named after lake sturgeon.",
@@ -41,7 +41,7 @@ const event = [
     name: 'Harvest Moon',
     type: 'Full Moon',
     time: null,
-    startDate: '2019-09-14',
+    startDate: '2019-09-14T00:00:00+00:00',
     endDate: null,
     location: null,
     description:
@@ -53,7 +53,7 @@ const event = [
     name: 'Micro Full Moon',
     type: 'Full Moon',
     time: null,
-    startDate: '2019-09-14',
+    startDate: '2019-09-14T00:00:00+00:00',
     endDate: null,
     location: null,
     description:
@@ -65,7 +65,7 @@ const event = [
     name: 'September Equinox',
     type: null,
     time: null,
-    startDate: '2019-09-23',
+    startDate: '2019-09-23T00:00:00+00:00',
     endDate: null,
     location: 'Northern Hemisphere',
     description:
@@ -77,8 +77,8 @@ const event = [
     name: 'Draconid Meteor Shower',
     type: 'Meteor Shower',
     time: 'just before nightfall',
-    startDate: '2019-10-06',
-    endDate: '2019-10-10',
+    startDate: '2019-10-06T00:00:00+00:00',
+    endDate: '2019-10-10T00:00:00+00:00',
     location: 'Northern Hemisphere',
     description:
       'Peak: 10/08/2019- 10/09/2019, Parent: Comet 21P/Giacobini-Zinner',
@@ -89,7 +89,7 @@ const event = [
     name: "Hunter's Moon",
     type: 'Full Moon',
     time: null,
-    startDate: '2019-10-13',
+    startDate: '2019-10-13T00:00:00+00:00',
     endDate: null,
     location: 'Northern Hemisphere',
     description:
@@ -101,8 +101,8 @@ const event = [
     name: 'Orionid Meteor Shower',
     type: 'Meteor Shower',
     time: 'just after midnight and before the Sun rises',
-    startDate: '2019-10-02',
-    endDate: '2019-11-07',
+    startDate: '2019-10-02T00:00:00+00:00',
+    endDate: '2019-11-07T00:00:00+00:00',
     location: 'Both Hemispheres',
     description: 'Peak: 10/21/2019-10/22/2019, Parent: Comet 1P/Halley',
     img: ''
@@ -112,8 +112,8 @@ const event = [
     name: 'Mercury Transit',
     type: 'Mercury Transit',
     time: null,
-    startDate: '2019-11-11',
-    endDate: '2019-11-12',
+    startDate: '2019-11-11T00:00:00+00:00',
+    endDate: '2019-11-12T00:00:00+00:00',
     location: 'Visible from most parts of the world',
     description:
       'Mercury, the smallest planet of our solar system, will move between the Sun and the Earth and appear as a small, dark speck of dust in front of the Sun for about 5 hours and 30 minutes. Like solar eclipses, must be viewed using specialized eyewear.',
@@ -124,7 +124,7 @@ const event = [
     name: 'Beaver Moon',
     type: 'Full Moon',
     time: null,
-    startDate: '2019-11-12',
+    startDate: '2019-11-12T00:00:00+00:00',
     endDate: null,
     location: null,
     description:
@@ -136,8 +136,8 @@ const event = [
     name: 'Leonid Meteor Shower',
     type: 'Meteor SHower',
     time: null,
-    startDate: '2019-11-06',
-    endDate: '2019-11-30',
+    startDate: '2019-11-06T00:00:00+00:00',
+    endDate: '2019-11-30T00:00:00+00:00',
     location: 'Both Hemispheres',
     description:
       'Called Leonids because the point in the sky where the meteors seem to emerge from, lies in the constellation Leo. Peak: 11/17/2019-11/18/2019, Parent: Comet 55P/Tempel-Tuttle',
@@ -148,7 +148,7 @@ const event = [
     name: 'Cold Moon',
     type: 'Full Moon',
     time: null,
-    startDate: '2019-12-12',
+    startDate: '2019-12-12T00:00:00+00:00',
     endDate: null,
     location: '',
     description:
@@ -160,8 +160,8 @@ const event = [
     name: 'Geminid Meteors',
     type: 'Meteor Shower',
     time: null,
-    startDate: '2019-12-04',
-    endDate: '2019-12-17',
+    startDate: '2019-12-04T00:00:00+00:00',
+    endDate: '2019-12-17T00:00:00+00:00',
     location: 'Both Hemispheres',
     description:
       "Geminids are not associated with a comet but with an asteroid: null00 Phaethon. The asteroid takes about 1.4 years to orbit the Sun. During it's peak, 12/14-12/15, there is a possibility of sighting around 120 meteors per hour.",
@@ -172,7 +172,7 @@ const event = [
     name: 'December Solstice',
     type: 'Solstice',
     time: null,
-    startDate: '2019-12-21',
+    startDate: '2019-12-21T00:00:00+00:00',
     endDate: null,
     location: 'Northern Hemisphere',
     description:
@@ -184,8 +184,8 @@ const event = [
     name: 'Ursid Meteors',
     type: 'Meteor Shower',
     time: null,
-    startDate: '2019-12-17',
-    endDate: '2019-12-26',
+    startDate: '2019-12-17T00:00:00+00:00',
+    endDate: '2019-12-26T00:00:00+00:00',
     location: 'Northern Hemisphere',
     description:
       'At its peak, 12/22-12/23, observers may be able to view as many as 10 meteors in an hour. Partent: Comet 8P/Tuttle',
