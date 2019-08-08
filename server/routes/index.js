@@ -51,4 +51,9 @@ router.get('/allCallsForMonth', async (req, res, next) => {
     cosmic: cosmicEvent
   });
 });
+
+router.get('/userEvent', (req, res, next) => {
+  console.log("hey what's up");
+});
+
 module.exports = router;
