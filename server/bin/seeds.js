@@ -2,8 +2,8 @@ const mongoose = require('mongoose');
 const Event = require('../models/Event');
 
 mongoose
-  // .connect(process.env.MONGODB_URI, { useNewUrlParser: true })
-  .connect('mongodb://localhost/CircadianCalendar', { useNewUrlParser: true })
+  .connect(process.env.MONGODB_URI, { useNewUrlParser: true })
+  // .connect('mongodb://localhost/CircadianCalendar', { useNewUrlParser: true })
   .then(x => {
     console.log(
       `Connected to Mongo! Database name: "${x.connections[0].name}"`
