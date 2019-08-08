@@ -3,17 +3,38 @@ import FullCalendar from '@fullcalendar/react';
 import dayGridPlugin from '@fullcalendar/daygrid';
 import timeGridPlugin from '@fullcalendar/timegrid';
 import interactionPlugin from '@fullcalendar/interaction';
+import axios from 'axios';
 import '@fullcalendar/timegrid/main.css';
 import './allCalendar.css';
 
 export default class AllCalendar extends Component {
-  // calendarComponentRef = React.createRef();
+  state = {
+    eventFormShowing: false,
+    eventTitle: '',
+    eventDate: '',
+    eventTime: ''
+  };
+  // eventClick = info => {
+  //   console.dir(info.event.title);
+  //   alert('you clicked on boring old me');
+  // };
+
+  userEvents = async () => {
+    let result = await axios.get(`${process.env.REACT_APP_BASE}/userEvent`);
+    // return result.data;
+  };
+
+  handleChange = e => {
+    this.setState({ [e.target.name]: e.target.value });
+  };
+
+  async componentDidMount() {
+    let userEvents = this.userEvents();
+  }
 
   render() {
     const sanitizedWeatherEvents = this.props.weatherEvents.map(wEvent => {
       let oneWeather = {};
-      // let sanitizedDate = wEvent.dateTimeISO.split('T')[0];
-      // oneWeather.date = sanitizedDate;
       oneWeather.date = wEvent.dateTimeISO;
       oneWeather.title = wEvent.weather;
       return oneWeather;
@@ -38,25 +59,48 @@ export default class AllCalendar extends Component {
       ...sanitizedMoonEvents,
       ...sanitizedCosmicEvents
     ];
-    console.log('@@@@', allSanitizedEvents);
+    // console.log('@@@@', allSanitizedEvents);
 
-    // MUST FIX HANDLE DATE CLICK EX:
-    // handleDateClick = () => {
-    //   if ('Would you like to add an event to ' + arg.dateStr + ' ?') {
-    //     this.setState({
-    //       // add new event data
-    //       calendarEvents: this.state.calendarEvents.concat({
-    //         // creates a new array
-    //         title: 'New Event',
-    //         start: arg.date,
-    //         allDay: arg.allDay
-    //       })
-    //     });
-    //   }
-    // };
+    const addEvent = () => {
+      console.log('@@@@@@@@@@@@@@@', this.state.eventFormShowing);
+      this.setState({
+        eventFormShowing: !this.state.eventFormShowing
+      });
+    };
 
     return (
-      <div>
+      <div className="fullCal">
+        <button onClick={addEvent}>Add Event</button>
+        {this.state.eventFormShowing && (
+          <div className="Modal">
+            <form onSubmit={this.userEvent}>
+              <h3>Add Event</h3>
+
+              <legend>Title</legend>
+              <input
+                value={this.state.titleInput}
+                name="eventTitle"
+                onChange={this.handleChange}
+              />
+
+              <legend>Date</legend>
+              <input
+                value={this.state.dateInput}
+                name="eventDate"
+                placeholder="YYYY-MM-DD"
+                onChange={this.handleChange}
+              />
+
+              <legend>Time</legend>
+              <input
+                value={this.state.timeInput}
+                name="eventTime"
+                onChange={this.handleChange}
+              />
+              <button>Submit</button>
+            </form>
+          </div>
+        )}
         <FullCalendar
           defaultView="dayGridMonth"
           plugins={[dayGridPlugin, timeGridPlugin, interactionPlugin]}
@@ -67,11 +111,10 @@ export default class AllCalendar extends Component {
             center: 'title',
             right: 'dayGridMonth,timeGridWeek,timeGridDay,listWeek'
           }}
-          // ref={this.calendarComponentRef}
-          // dateClick={this.handleDateClick}
-          // events={[{ sanitizedWeatherEvents }, { sanitizedMoonEvents }]}
+          // eventClick={this.eventClick}
           events={allSanitizedEvents}
         />
+        <div />
       </div>
     );
   }

@@ -8,17 +8,13 @@ import Signup from './components/signup/Signup.js';
 import Login from './components/login/Login.js';
 import AllCalendar from './components/all-calendar/AllCalendar.js';
 import './App.css';
-// import MoonCalendar from './components/moon-calendar/MoonCalendar.js';
-// import WeatherCalendar from './components/weather-calendar/WeatherCalendar.js';
-// import CosmicCalendar from './components/cosmic-calendar/CosmicCalendar.js';
 // import Moment from 'react-moment';
 
 // to-do:
 // -redirect mooncal/access to logged in users only
 // make api call blank date to blank date, from - to
-// put the events in appropriate time box ("sort events into cal"),
-//connect seeds to cosmic events
-// calculate moon phases (based off current api structure)
+// calculate moon phases (based off current api structure) : SEED MOON PHASES
+// add dateISO to existing seeds
 //add eyes that follow cursor
 
 class App extends React.Component {
@@ -33,7 +29,9 @@ class App extends React.Component {
   };
 
   month = async () => {
-    let result = await axios.get(`${process.env.REACT_APP_BASE}/allCallsForMonth`);
+    let result = await axios.get(
+      `${process.env.REACT_APP_BASE}/allCallsForMonth`
+    );
     return result.data;
   };
 
@@ -48,7 +46,6 @@ class App extends React.Component {
         console.log('yay really fetching the user now');
         let theUser = response.data;
         this.setState({ currentlyLoggedIn: theUser, ready: true });
-        return theUser;
       })
       .catch(() => {
         this.setState({ currentlyLoggedIn: null });
@@ -137,7 +134,7 @@ class App extends React.Component {
               />
             )}
           />
-
+          {/* 
           <Route
             exact
             path="/home"
@@ -148,54 +145,25 @@ class App extends React.Component {
                 theUser={this.state.currentlyLoggedIn}
               />
             )}
-          />
-
-          {/* <Route
-            exact
-            path="/moon-calendar"
-            render={() => (
-              <MoonCalendar
-                // look at endpoint docs for specific date query yay
-                currentlyLoggedIn={this.state.currentlyLoggedIn}
-                moonEvents={this.state.moonInfo}
-              />
-            )}
           /> */}
 
-          {/* <Route
-            exact
-            path="/cosmic-calendar"
-            render={() => (
-              <CosmicCalendar
-                currentlyLoggedIn={this.state.currentlyLoggedIn}
-                cosmicEvents={this.state.cosmicInfo}
-              />
-            )}
-          /> */}
-
-          {/* <Route
-            exact
-            path="/weather-calendar"
-            render={() => (
-              <WeatherCalendar
-                currentlyLoggedIn={this.state.currentlyLoggedIn}
-                weatherEvents={this.state.weatherInfo}
-              />
-            )}
-          /> */}
           <Route
             exact
             path="/all-calendar"
-            render={() => (
-              <AllCalendar
-                currentlyLoggedIn={this.state.currentlyLoggedIn}
-                weatherEvents={this.state.weatherInfo}
-                moonEvents={this.state.moonInfo}
-                cosmicEvents={this.state.cosmicInfo}
-                ready={this.state.ready}
-                theUser={this.state.currentlyLoggedIn}
-              />
-            )}
+            render={() => {
+              if (this.state.currentlyLoggedIn)
+                return (
+                  <AllCalendar
+                    currentlyLoggedIn={this.state.currentlyLoggedIn}
+                    weatherEvents={this.state.weatherInfo}
+                    moonEvents={this.state.moonInfo}
+                    cosmicEvents={this.state.cosmicInfo}
+                    ready={this.state.ready}
+                    theUser={this.state.currentlyLoggedIn}
+                  />
+                );
+              else return <Redirect to="/" />;
+            }}
           />
         </Switch>
       </div>

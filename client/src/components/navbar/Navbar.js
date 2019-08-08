@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link, NavLink } from 'react-router-dom';
+import './navbar.css';
 
 function Navbar(props) {
   const doTheLogout = () => {
@@ -10,7 +11,7 @@ function Navbar(props) {
     <nav>
       {props.theUser && (
         <Link to="/" style={{ textDecoration: 'none', margin: '10px' }}>
-          Today
+          <button>Home</button>
         </Link>
       )}
 
@@ -23,13 +24,13 @@ function Navbar(props) {
 
       {props.theUser && (
         <span>
-          <button>
-            <Link to="/" onClick={doTheLogout}>
-              Log Out
-            </Link>
-          </button>
+          <Link to="/" onClick={doTheLogout}>
+            <button>Log Out</button>
+          </Link>
 
-          <span>Hello, {props.theUser.username}</span>
+          <span className="welcome-greetings">
+            Hello, {props.theUser.username}
+          </span>
         </span>
       )}
     </nav>

@@ -1,7 +1,18 @@
 @import '~@fullcalendar/core/main.css';
 @import '~@fullcalendar/daygrid/main.css';
 
-body {
+.fullCal {
+  width: 70%;
+  padding: 71px;
+  margin: 0 auto;
+}
+
+.Modal h3,
+.Modal legend {
+  color: black;
+}
+
+/* body {
   margin: 0 auto;
   margin-top: 40px;
   text-align: center;
@@ -53,4 +64,4 @@ h1 {
 #calendar {
   float: right;
   width: 900px;
-}
+} */

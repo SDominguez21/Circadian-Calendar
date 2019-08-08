@@ -42,6 +42,11 @@ export default class Today extends Component {
     console.log('inside of today', this.props);
     return (
       <div className="today-container">
+        <div className="calbtn">
+          <Link to="/all-calendar">
+            <button>Calendar</button>
+          </Link>
+        </div>
         <div className="todayBackground" />
         {/* cosmic */}
         {/* seeds pending */}
@@ -91,7 +96,6 @@ export default class Today extends Component {
             />
           )}
         </div>
-        <Link to="/all-calendar">Calendar</Link>
       </div>
     );
   }

@@ -6,6 +6,11 @@
   background-size: cover;
 } */
 
+.calbtn {
+  flex-basis: 100%;
+  height: 6rem;
+}
+
 .today-container {
   height: 100%;
   display: flex;
@@ -13,16 +18,14 @@
   align-items: center;
   flex-direction: row;
   margin: 161px;
+  flex-wrap: wrap;
 }
 .todayBackground {
-  /* position: absolute;
-  background: url('../../background.jpg');
-  height: 100%;
-  width: 100%; */
   position: absolute;
   background: url(/static/media/background.37af7895.jpg);
-  background-position: left;
-  height: 132%;
+  background-position: top;
+  background-size: contain;
+  height: 191%;
   width: 100%;
   top: 0%;
   z-index: -1;
@@ -33,9 +36,7 @@
   width: 20%;
 } */
 /* .today-container > div {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  flex: 1;
 } */
 
 .today-container > div img {
