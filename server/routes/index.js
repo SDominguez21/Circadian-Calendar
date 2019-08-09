@@ -4,6 +4,7 @@ const request = require('request');
 const rp = require('request-promise');
 const Event = require('../models/Event');
 const User = require('../models/User');
+const UserEvent = require('../models/UserEvent');
 
 /* GET home page */
 router.get('/', (req, res, next) => {
@@ -11,7 +12,7 @@ router.get('/', (req, res, next) => {
 });
 
 router.get('/allCallsForMonth', async (req, res, next) => {
-  console.log('hello you rang?');
+  // console.log('hello you rang?');
 
   let weather = [];
   let moon = [];
@@ -37,20 +38,60 @@ router.get('/allCallsForMonth', async (req, res, next) => {
   await Event.find({
     startDate: { $gte: '2019-07-01', $lte: '2019-12-31' }
   }).then(results => {
-    console.log('!!!!!!!!', results);
+    // console.log('!!!!!!!!', results);
     cosmicEvent.push(...results);
   });
 
-  console.log('88888888888', cosmicEvent);
-  res.send({
+  // console.log('88888888888', cosmicEvent);
+  res.json({
     weather: weather,
     moon: moon,
     cosmic: cosmicEvent
   });
 });
 
-router.get('/userEvent', (req, res, next) => {
-  console.log("hey what's up");
+// call to data base to get all the user events
+router.get('/userEvent/:userId', async (req, res, next) => {
+  // console.log('inside userEvent');
+
+  let userEvents = [];
+  await UserEvent.find({
+    userId: req.params.userId
+  }).then(results => {
+    userEvents.push(...results);
+  });
+  console.log(userEvents);
+
+  res.json({
+    userEvents: userEvents
+  });
+});
+
+router.post('/addEvent', (req, res, next) => {
+  // console.log('inside user add event');
+  let { title, date, time, userId } = req.body;
+  // console.log(title, date, time);
+
+  const newUserEvent = new UserEvent({
+    userId: userId,
+    title: title,
+    date: date,
+    time: time
+  });
+
+  newUserEvent.save().then(savedEvent => {
+    res.json({ userEvent: savedEvent });
+  });
+});
+
+router.post('/delete/:eventId', (req, res, next) => {
+  console.log('wake me up inside', req.params.eventId);
+  UserEvent.findByIdAndDelete(req.params.eventId)
+    .then(deletedItem => {
+      console.log('item deleted', deletedItem);
+      res.send('im done');
+    })
+    .catch(err => console.log(err));
 });
 
 module.exports = router;

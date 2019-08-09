@@ -2,10 +2,12 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 const userEventSchema = new Schema({
-  time: String,
-  title: String
+  userId: String,
+  title: String,
+  date: String,
+  time: String
 });
 
-const User = mongoose.model('User', userSchema);
+const UserEvent = mongoose.model('UserEvent', userEventSchema);
 
 module.exports = UserEvent;
