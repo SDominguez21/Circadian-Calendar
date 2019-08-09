@@ -38,13 +38,13 @@ export default class Today extends Component {
   }
 
   render() {
-    console.log('inside of today', this.props);
-    console.log('6666666666', this.props.firstCosmic);
+    // console.log('inside of today', this.props);
+    // console.log('6666666666', this.props.firstCosmic);
     return (
       <div className="today-container">
-        <div className="calbtn">
+        <div className="caldiv">
           <Link to="/all-calendar">
-            <button>Calendar</button>
+            <button className="calbtn">CALENDAR</button>
           </Link>
         </div>
         <div className="todayBackground" />
@@ -80,7 +80,7 @@ export default class Today extends Component {
 
         {/* weather */}
         <div className="weather-container">
-          {console.log(this.state.weatherInfo)}
+          {/* {console.log(this.state.weatherInfo)} */}
           {this.state.weatherShowing ? (
             <div className="today-stats" onClick={this.handleClickWeather}>
               <p>{this.props.firstWeather.weather}</p>

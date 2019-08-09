@@ -2,6 +2,8 @@
 @import '~@fullcalendar/daygrid/main.css';
 
 .fullCal {
+  display: flex;
+  justify-content: center;
   width: 70%;
   padding: 71px;
   margin: 0 auto;
@@ -12,6 +14,16 @@
   color: black;
 }
 
+.textBox h1 {
+  display: flex;
+  background: red;
+}
+
+.sideMenu {
+  display: flex;
+  flex-direction: column;
+  margin-right: 80px;
+}
 /* body {
   margin: 0 auto;
   margin-top: 40px;

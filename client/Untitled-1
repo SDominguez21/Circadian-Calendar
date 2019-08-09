@@ -14,6 +14,19 @@ and then git add commit and push heroku master
 
 ------------------------------------------------------------------------------------------------------------
 
--make user interface=> form for user to use for each event entry--route for entries, backend route and save user information to mongo 
--somewhere in all-calendar (whereever we are making all the api calls) route, collect data and add it the object and in 
--query to mongo and it's own route for calendar componoent and send results back and sanitize them just like other sanitized objects 
+-make user interface=> form for user to use for each event entry--
+route for entries, backend route and save user information to mongo 
+-somewhere in all-calendar (whereever we are making all the api calls) route, 
+collect data and add it the object and in 
+-query to mongo and it's own route for calendar componoent and 
+send results back and sanitize them just like other sanitized objects 
+
+-make colorful gradient for calendar background 
+-add info about the project on the landing page 
+
+make eyes on moon follow the cursor:
+
+ make new component and css style sheet? 
+ wrap div around moon component in today 
+ add to today css
+  WHERE DOES JAVASCRIPT GO? 
